@@ -11,8 +11,9 @@ class ProductExpirationExtension < Spree::Extension
   # def self.require_gems(config)
   #   config.gem "gemname-goes-here", :version => '1.2.3'
   # end
-  
+
   def activate
+    Product.send(:include, ProductExpiration)
 
     # make your helper avaliable in all views
     # Spree::BaseController.class_eval do
