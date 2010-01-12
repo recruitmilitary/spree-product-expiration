@@ -14,7 +14,6 @@ class ProductExpirationExtension < Spree::Extension
 
   def activate
     Product.send(:include, ProductExpiration)
-    Spree::BaseController.send(:include, ProductExpiration::ControllerMethods)
 
     # make your helper avaliable in all views
     # Spree::BaseController.class_eval do
