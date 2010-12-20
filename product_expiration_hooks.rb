@@ -40,4 +40,6 @@ class ProductExpirationHooks < Spree::ThemeSupport::HookListener
   #   end
   #
 
+  insert_after :admin_product_form_right, 'admin/products/expiration'
+
 end

@@ -1,0 +1,5 @@
+<% f.field_container :deleted_at do %>
+  <%= f.label :deleted_at, t("expires") %><br />
+  <%= f.error_message_on :deleted_at %>
+  <%= f.unobtrusive_date_text_picker :deleted_at %>
+<% end %>
