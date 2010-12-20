@@ -1,3 +1,3 @@
 = Product Expiration
 
-Description goes here
+Automatically remove a product from your store at a certain date
