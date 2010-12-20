@@ -1,3 +1,7 @@
 ---
 en:
   expires: Expires
+  restore: Restore
+  notice_messages:
+    product_restored: "Product Restored Successfully"
+    product_not_restored: "Product Could Not Be Restored"

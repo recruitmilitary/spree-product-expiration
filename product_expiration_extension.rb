@@ -15,6 +15,14 @@ class ProductExpirationExtension < Spree::Extension
   def activate
     Product.send(:include, ProductExpiration)
 
+    Admin::ProductsController.send(:include, ProductExpirationController)
+
+    Admin::BaseHelper.class_eval do
+      def link_to_restore(resource, options = {})
+        link_to_with_icon('restore', t("restore"), restore_admin_product_url(resource))
+      end
+    end
+
     # make your helper avaliable in all views
     # Spree::BaseController.class_eval do
     #   helper YourHelper

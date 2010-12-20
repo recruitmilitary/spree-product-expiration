@@ -8,3 +8,17 @@ module ProductExpiration
     end
   end
 end
+module ProductExpirationController
+  def restore
+    load_object
+    @product.deleted_at = nil
+    
+    if @product.save
+      self.notice = I18n.t("notice_messages.product_restored")
+    else
+      self.notice = I18n.t("notice_messages.product_not_restored")
+    end
+
+    redirect_to edit_admin_product_url(@product)
+  end
+end
