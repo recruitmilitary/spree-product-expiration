@@ -10,7 +10,7 @@ module ProductExpiration
 end
 module ProductExpirationController
   def restore
-    load_object
+    @product = Product.find_by_permalink(params[:id])
     @product.deleted_at = nil
     
     if @product.save
